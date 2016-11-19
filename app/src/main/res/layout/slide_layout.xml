@@ -1,25 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:weightSum="8"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="#e7e7e7"
+    android:padding="20sp">
 
-    <TextView
-        android:text="Sample Text"
-        android:gravity="center"
-        android:textSize="20sp"
-        android:layout_weight="1"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-    <TextView
-        android:background="@color/colorPrimary"
-        android:textSize="20sp"
-        android:gravity="center"
-        android:text="Author Name"
-        android:textColor="@color/pureWhite"
-        android:layout_weight="7"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
 
+    <android.support.v7.widget.CardView
+        app:cardCornerRadius="5dp"
+        app:cardElevation="2dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:weightSum="8">
+
+            <TextView
+                android:id="@+id/quoteHolder"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Sample Text"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/authorHolder"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="7"
+                android:background="@color/colorPrimary"
+                android:gravity="center"
+                android:text="Author Name"
+                android:textColor="@color/pureWhite"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+
+    </android.support.v7.widget.CardView>
 </LinearLayout>
