@@ -4,10 +4,20 @@ package inspiration.coder.genuine.com.genuineinspiration;
 public class Quote {
     String quote;
     String author;
+    int id;
 
-    public Quote(String quote, String author) {
+    public Quote(int id,String quote, String author) {
         this.quote = quote;
         this.author = author;
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getQuote() {

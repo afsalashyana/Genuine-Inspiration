@@ -27,11 +27,12 @@ public class MainActivity extends AppCompatActivity {
             Scanner scn = new Scanner(in);
             while(scn.hasNext()){
                 String temp = scn.nextLine();
-                String quote = temp.split("[|]")[0];
-                String author = temp.split("[|]")[1];
-                Log.d("MainActivity",quote + "---by " + author);
+                int quoteID = Integer.parseInt(temp.split("[|]")[0]);
+                String quote = temp.split("[|]")[1];
+                String author = temp.split("[|]")[2];
+                Log.d("MainActivity",quote + "---by " + author + " at " + quoteID);
 
-                Quote qt = new Quote(quote,author);
+                Quote qt = new Quote(quoteID,quote,author);
                 list.add(qt);
             }
 
@@ -44,7 +45,4 @@ public class MainActivity extends AppCompatActivity {
         viewPager.setAdapter(adapter);
     }
 
-    public void sendQuote(View view) {
-
-    }
 }

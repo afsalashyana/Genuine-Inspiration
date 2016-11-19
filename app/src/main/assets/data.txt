@@ -1,11 +1,11 @@
-The best preparation for tomorrow is doing your best today|Jackson Brown, Jr.
-The best and most beautiful things in the world cannot be seen or even touched - they must be felt with the heart|Helen Keller
-Put your heart, mind, and soul into even your smallest acts. This is the secret of success|Swami Sivananda
-The best thing to give to your enemy is forgiveness; to an opponent, tolerance; to a friend, your heart; to your child, a good example; to a father, deference; to your mother, conduct that will make her proud of you; to yourself, respect; to all men, charity|Benjamin Franklin
-Hope lies in dreams, in imagination and in the courage of those who dare to make dreams into reality|Jonas Salk
-We all live with the objective of being happy; our lives are all different and yet the same|Anne Frank
-Touch the earth, speak of love, walk on common ground|Steven Van Zandt
-In recognizing the humanity of our fellow beings, we pay ourselves the highest tribute|Thurgood Marshall
-Respect is love in action|Bangambiki Habyarimana
-No soul that aspires can ever fail to rise; no heart that loves can ever be abandoned. Difficulties exist only that in overcoming them we may grow strong, and they who have suffered are able to save|Annie Besant
-One must care about a world one will not see|Bertrand Russell
+1|The best preparation for tomorrow is doing your best today|Jackson Brown, Jr.
+2|The best and most beautiful things in the world cannot be seen or even touched - they must be felt with the heart|Helen Keller
+3|Put your heart, mind, and soul into even your smallest acts. This is the secret of success|Swami Sivananda
+4|The best thing to give to your enemy is forgiveness; to an opponent, tolerance; to a friend, your heart; to your child, a good example; to a father, deference; to your mother, conduct that will make her proud of you; to yourself, respect; to all men, charity|Benjamin Franklin
+5|Hope lies in dreams, in imagination and in the courage of those who dare to make dreams into reality|Jonas Salk
+6|We all live with the objective of being happy; our lives are all different and yet the same|Anne Frank
+7|Touch the earth, speak of love, walk on common ground|Steven Van Zandt
+8|In recognizing the humanity of our fellow beings, we pay ourselves the highest tribute|Thurgood Marshall
+9|Respect is love in action|Bangambiki Habyarimana
+10|No soul that aspires can ever fail to rise; no heart that loves can ever be abandoned. Difficulties exist only that in overcoming them we may grow strong, and they who have suffered are able to save|Annie Besant
+11|one must care about a world one will not see|Bertrand Russell
