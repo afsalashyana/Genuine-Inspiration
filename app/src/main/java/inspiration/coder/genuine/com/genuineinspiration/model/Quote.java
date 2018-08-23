@@ -1,12 +1,12 @@
-package inspiration.coder.genuine.com.genuineinspiration;
+package inspiration.coder.genuine.com.genuineinspiration.model;
 
 
 public class Quote {
-    String quote;
-    String author;
-    int id;
+    private String quote;
+    private String author;
+    private int id;
 
-    public Quote(int id,String quote, String author) {
+    public Quote(int id, String quote, String author) {
         this.quote = quote;
         this.author = author;
         this.id = id;

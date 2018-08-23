@@ -1,4 +1,4 @@
-package inspiration.coder.genuine.com.genuineinspiration;
+package inspiration.coder.genuine.com.genuineinspiration.adapters;
 
 
 import android.content.Context;
@@ -12,18 +12,22 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import inspiration.coder.genuine.com.genuineinspiration.R;
+import inspiration.coder.genuine.com.genuineinspiration.model.Quote;
+
 import static android.content.Context.MODE_APPEND;
-import static android.content.Context.MODE_WORLD_READABLE;
 
 public class QuotePagerAdapter extends PagerAdapter {
-    ArrayList<Quote> list;
-    Context context;
+    private static final String LIKED_QUOTES = "likedQuotes.txt";
+    private ArrayList<Quote> list;
+    private Context context;
 
     public QuotePagerAdapter(ArrayList<Quote> list, Context context) {
         this.list = list;
@@ -37,13 +41,13 @@ public class QuotePagerAdapter extends PagerAdapter {
         LayoutInflater inflater = LayoutInflater.from(context);
         ViewGroup layout = (ViewGroup) inflater.inflate(R.layout.slide_layout, container, false);
 
-        final TextView quote = (TextView) layout.findViewById(R.id.quoteHolder);
-        TextView author = (TextView) layout.findViewById(R.id.authorHolder);
+        final TextView quote = layout.findViewById(R.id.quoteHolder);
+        TextView author = layout.findViewById(R.id.authorHolder);
 
         quote.setText(object.getQuote());
         author.setText(object.getAuthor());
 
-        ImageButton btn = (ImageButton)layout.findViewById(R.id.shareButton);
+        ImageButton btn = layout.findViewById(R.id.shareButton);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -56,30 +60,31 @@ public class QuotePagerAdapter extends PagerAdapter {
             }
         });
 
-        ImageButton btn1 = (ImageButton)layout.findViewById(R.id.likeButton);
+        ImageButton btn1 = layout.findViewById(R.id.likeButton);
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 try {
                     Boolean isAlreadyLiked = false;
-                    Scanner scanner = new Scanner(context.openFileInput("likedQuotes.txt"));
-                    while (scanner.hasNext()){
-                        int id = Integer.parseInt(scanner.nextLine());
-                        Log.d("QuotePagerAdapter","Liked " + id + " where liked quote = " + quote.getId());
-                        if(id==object.getId())
-                            isAlreadyLiked=true;
+                    if (fileExists(LIKED_QUOTES)) {
+                        Scanner scanner = new Scanner(context.openFileInput(LIKED_QUOTES));
+                        while (scanner.hasNext()) {
+                            int id = Integer.parseInt(scanner.nextLine());
+                            Log.d("QuotePagerAdapter", "Liked " + id + " where liked quote = " + quote.getId());
+                            if (id == object.getId())
+                                isAlreadyLiked = true;
+                        }
+                        if (isAlreadyLiked) {
+                            Toast.makeText(context, "This quote is already liked :-)", Toast.LENGTH_SHORT).show();
+                            return;
+                        }
                     }
-                    if(isAlreadyLiked){
-                        Toast.makeText(context,"This quote is already liked :-)", Toast.LENGTH_SHORT).show();
-                        return;
-                    }
-
-                    FileOutputStream fout = context.openFileOutput("likedQuotes.txt",  MODE_APPEND);
+                    FileOutputStream fout = context.openFileOutput(LIKED_QUOTES, MODE_APPEND);
                     PrintWriter printWriter = new PrintWriter(fout, true);
                     printWriter.println(object.getId());
                     printWriter.close();
 
-                    Toast.makeText(context,"Quote Added to Liked List", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, "Quote Added to Liked List", Toast.LENGTH_SHORT).show();
 
                 } catch (FileNotFoundException e) {
                     e.printStackTrace();
@@ -91,6 +96,11 @@ public class QuotePagerAdapter extends PagerAdapter {
         container.addView(layout);
 
         return layout;
+    }
+
+    private boolean fileExists(String filename) {
+        File file = context.getFileStreamPath(filename);
+        return file != null && file.exists();
     }
 
     @Override
