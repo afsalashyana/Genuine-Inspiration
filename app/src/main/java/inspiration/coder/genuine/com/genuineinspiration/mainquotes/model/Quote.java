@@ -1,4 +1,4 @@
-package inspiration.coder.genuine.com.genuineinspiration.model;
+package inspiration.coder.genuine.com.genuineinspiration.mainquotes.model;
 
 
 public class Quote {
@@ -34,5 +34,10 @@ public class Quote {
 
     public void setAuthor(String author) {
         this.author = author;
+    }
+
+    @Override
+    public String toString() {
+        return quote;
     }
 }

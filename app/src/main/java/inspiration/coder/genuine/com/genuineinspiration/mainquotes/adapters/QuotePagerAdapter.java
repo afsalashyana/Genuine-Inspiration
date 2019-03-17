@@ -1,4 +1,4 @@
-package inspiration.coder.genuine.com.genuineinspiration.adapters;
+package inspiration.coder.genuine.com.genuineinspiration.mainquotes.adapters;
 
 
 import android.content.Context;
@@ -18,19 +18,20 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 import inspiration.coder.genuine.com.genuineinspiration.R;
-import inspiration.coder.genuine.com.genuineinspiration.model.Quote;
+import inspiration.coder.genuine.com.genuineinspiration.mainquotes.model.Quote;
 
 import static android.content.Context.MODE_APPEND;
 
 public class QuotePagerAdapter extends PagerAdapter {
     private static final String LIKED_QUOTES = "likedQuotes.txt";
-    private ArrayList<Quote> list;
+    private List<Quote> list;
     private Context context;
 
-    public QuotePagerAdapter(ArrayList<Quote> list, Context context) {
+    public QuotePagerAdapter(List<Quote> list, Context context) {
         this.list = list;
         this.context = context;
     }

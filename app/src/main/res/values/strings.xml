@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Genuine Inspiration</string>
+    <string name="title_view_all_quotes">All Quotes</string>
+    <string name="title_view_liked_quotes">Liked Quotes</string>
 </resources>
