@@ -14,7 +14,9 @@
             android:name=".likedquotes.LikedQuotesActivity"
             android:label="@string/title_view_liked_quotes"
             android:parentActivityName=".dashboard.DashboardActivity" />
-        <activity android:name=".dashboard.DashboardActivity">
+        <activity
+            android:name=".dashboard.DashboardActivity"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
