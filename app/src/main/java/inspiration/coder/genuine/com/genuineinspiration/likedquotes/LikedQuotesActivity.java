@@ -11,6 +11,7 @@ import java.util.List;
 
 import inspiration.coder.genuine.com.genuineinspiration.R;
 import inspiration.coder.genuine.com.genuineinspiration.core.QuoteReaderService;
+import inspiration.coder.genuine.com.genuineinspiration.likedquotes.adapter.LikedQuoteListAdapter;
 import inspiration.coder.genuine.com.genuineinspiration.mainquotes.model.Quote;
 
 public class LikedQuotesActivity extends AppCompatActivity {
@@ -45,8 +46,11 @@ public class LikedQuotesActivity extends AppCompatActivity {
     }
 
     private void inflateListView(List<Quote> likedQuoteIdList) {
-        ArrayAdapter<Quote> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, android.R.id.text1, likedQuoteIdList);
+        LikedQuoteListAdapter adapter = new LikedQuoteListAdapter(this, likedQuoteIdList);
         listView.setAdapter(adapter);
+
+        listView.setDivider(null);
+        listView.setDividerHeight(0);
     }
 
     private Quote findById(int id) {

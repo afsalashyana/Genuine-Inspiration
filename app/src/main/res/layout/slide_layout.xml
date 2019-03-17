@@ -39,12 +39,12 @@
                     android:src="@drawable/thumb" />
 
                 <ImageButton
-                    android:foreground="?android:attr/selectableItemBackground"
                     android:id="@+id/shareButton"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:background="@color/pureWhite"
+                    android:foreground="?android:attr/selectableItemBackground"
                     android:padding="5dp"
                     android:scaleType="fitCenter"
                     android:src="@drawable/send" />
