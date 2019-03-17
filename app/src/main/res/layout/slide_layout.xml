@@ -11,7 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:cardCornerRadius="5dp"
-        app:cardElevation="2dp">
+        app:cardElevation="2dp"
+        app:cardUseCompatPadding="true">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -32,6 +33,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:background="@color/pureWhite"
+                    android:padding="5dp"
                     android:scaleType="fitCenter"
                     android:src="@drawable/thumb" />
 
@@ -41,6 +43,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:background="@color/pureWhite"
+                    android:padding="5dp"
                     android:scaleType="fitCenter"
                     android:src="@drawable/send" />
             </LinearLayout>
@@ -51,6 +54,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:padding="10dp"
                 android:text="Sample Text"
                 android:textColor="#000000"
                 android:textSize="20sp" />

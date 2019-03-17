@@ -3,6 +3,7 @@ package inspiration.coder.genuine.com.genuineinspiration.adapters;
 
 import android.content.Context;
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v4.view.PagerAdapter;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -34,8 +35,9 @@ public class QuotePagerAdapter extends PagerAdapter {
         this.context = context;
     }
 
+    @NonNull
     @Override
-    public Object instantiateItem(ViewGroup container, int position) {
+    public Object instantiateItem(@NonNull ViewGroup container, int position) {
         final Quote object = list.get(position);
 
         LayoutInflater inflater = LayoutInflater.from(context);
@@ -65,7 +67,7 @@ public class QuotePagerAdapter extends PagerAdapter {
             @Override
             public void onClick(View view) {
                 try {
-                    Boolean isAlreadyLiked = false;
+                    boolean isAlreadyLiked = false;
                     if (fileExists(LIKED_QUOTES)) {
                         Scanner scanner = new Scanner(context.openFileInput(LIKED_QUOTES));
                         while (scanner.hasNext()) {
