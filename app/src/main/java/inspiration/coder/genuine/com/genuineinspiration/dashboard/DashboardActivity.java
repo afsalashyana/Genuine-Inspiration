@@ -1,8 +1,10 @@
 package inspiration.coder.genuine.com.genuineinspiration.dashboard;
 
 import android.content.Intent;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.CardView;
 import android.view.View;
 import android.widget.Button;
 
@@ -21,8 +23,8 @@ public class DashboardActivity extends AppCompatActivity {
     }
 
     private void initializeComponents() {
-        Button viewAll = findViewById(R.id.dashboard_btnViewAllQuotes);
-        Button viewLiked = findViewById(R.id.dashboard_btnViewLikedQuotes);
+        CardView viewAll = findViewById(R.id.dashboard_btnViewAllQuotes);
+        CardView viewLiked = findViewById(R.id.dashboard_btnViewLikedQuotes);
 
         viewAll.setOnClickListener(new View.OnClickListener() {
             @Override
